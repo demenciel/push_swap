@@ -6,7 +6,7 @@
 #    By: acouture <acouture@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 11:25:27 by acouture          #+#    #+#              #
-#    Updated: 2023/03/13 07:32:06 by acouture         ###   ########.fr        #
+#    Updated: 2023/03/13 13:05:02 by acouture         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,8 @@ SRCS	:= ./src/main.c \
 			./src/utils.c \
 			./src/parsing.c \
 			./src/sorting.c \
+			./src/commands/commands1.c \
+			./src/commands/commands2.c \
 
 			
 OBJS	:= ${SRCS:.c=.o}
@@ -31,6 +33,9 @@ RESET = \033[0m
 
 all: makelibft $(NAME)
 	@exec 2>/dev/null
+
+# run: all
+# 	@./$(NAME) 
 
 makelibft:
 	@$(MAKE) -C $(LIBF_DIR)
