@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 15:13:28 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/12 15:52:30 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/13 09:10:20 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ int	ft_atoi(const char *str)
 		result = result * 10 + str[i] - '0';
 		i++;
 	}
+	check_fit_int(result);
 	return (result * sign);
 }

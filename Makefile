@@ -6,7 +6,7 @@
 #    By: acouture <acouture@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 11:25:27 by acouture          #+#    #+#              #
-#    Updated: 2023/03/12 14:55:52 by acouture         ###   ########.fr        #
+#    Updated: 2023/03/13 07:32:06 by acouture         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ CFLAGS	:= -g -Wextra -Wall -Werror
 HEADERS	:= -I ./include
 SRCS	:= ./src/main.c \
 			./src/utils.c \
-			./src/parsing.c
+			./src/parsing.c \
+			./src/sorting.c \
 
 			
 OBJS	:= ${SRCS:.c=.o}

@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 12:31:12 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/12 15:49:33 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/13 08:57:39 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # define RED "\033[0;31m"
 # define RESET "\033[0m"
 # define INT_MAX 2147483647
+# define INT_MIN (-2147483647 - 1)
 
 typedef struct s_list
 {
@@ -49,6 +50,7 @@ int					ft_tolower(int c);
 int					ft_strncmp(const char *str1, const char *str2, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 int					ft_atoi(const char *str);
+// int					*copy_int_arr(int *src);
 
 size_t				ft_strlen(const char *str);
 size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
@@ -66,6 +68,7 @@ void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_error(char *s);
+void				check_fit_int(int nb);
 
 char				*ft_strchr(const char *str, int c);
 char				*ft_strrchr(const char *str, int c);

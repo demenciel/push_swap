@@ -1,30 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/12 14:20:12 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/13 09:39:25 by acouture         ###   ########.fr       */
+/*   Created: 2023/03/13 07:31:39 by acouture          #+#    #+#             */
+/*   Updated: 2023/03/13 10:00:23 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int main(int ac, char **av)
+void    ft_swap(int *a, int *b)
 {
-    t_data *data;
+    int c;
 
-    data = malloc(sizeof(t_data));
-    if (ac < 2)
-        ft_error("");
-    else if (ac < 5)
-    {
-        parsing(data, av);
-        sorting(data);
-    }
-    // free(data->pile_a);
-    // free(data);
-    return (0);
+    c = *a;
+    *a = *b;
+    *b = c;
+}
+
+void    sorting_under_3(t_data *data)
+{
+    int a;
+    int b;
+    int c;
+    a = data->pile_a[0];
+    b = data->pile_a[1];
+    c = data->pile_a[2];
+    if (a > b)
+        ft_swap(a, b);
+    if (b > c)
+        ft_swap(a, b);
+    
+}
+
+void    sorting(t_data *data)
+{
+    sorting_under_3(data);
 }
