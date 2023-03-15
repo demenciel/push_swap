@@ -6,7 +6,7 @@
 #    By: acouture <acouture@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 11:25:27 by acouture          #+#    #+#              #
-#    Updated: 2023/03/15 08:05:59 by acouture         ###   ########.fr        #
+#    Updated: 2023/03/15 09:06:23 by acouture         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRCS	:= ./src/main.c \
 			./src/sorting.c \
 			./src/commands/commands1.c \
 			./src/commands/commands2.c \
-
+			./utils.c
 			
 OBJS	:= ${SRCS:.c=.o}
 LIBFT_A = 	libft.a

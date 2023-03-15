@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:20:12 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/15 07:43:54 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/15 09:08:07 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main(int ac, char **av)
     {
         struct_init(data);
         parsing(data, av);
-        // sorting(data);
+        sorting(data);
     }
     free(data);
     return (0);
