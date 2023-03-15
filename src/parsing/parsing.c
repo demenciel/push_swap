@@ -6,53 +6,51 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:41:45 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/15 07:56:11 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/15 09:02:57 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-// void    check_for_doubles(t_data *data)
-// {
-//     int i;
-//     int j;
-    
-//     i = 0;
-//     copy_a_to_b(data, data->size_pile_a);
-//     while (i < data->size_pile_a)
-//     {
-//         j = i + 1;
-//         while (j < data->size_pile_a)
-//         {
-//             if (data->pile_a[i] == data->pile_b[j])
-//                 ft_error(": Double");
-//             j++;
-//         }
-//         i++;
-//     }
-//     free(data->pile_b);
-// }
-
-void    args_to_pile_a(t_data *data, char **av)
+void    check_for_doubles(t_data *data)
 {
-    int i;
-    int nb;
-    t_pile_a *new;
-    
-    i = 1;
-    while (av[i])
+    t_pile_a *index;
+    t_pile_a *check;
+
+    check = data->pile_a;
+    while (check != NULL)
     {
-        nb = ft_atoi_int(av[i]);
-        new = new_node_a(nb, i - 1);
-        new->next = data->pile_a;
-        data->pile_a = new;
-        data->size_pile_a++;
-        i++;
+        index = check->next;
+        while (index != NULL)
+        {
+            if (check->data == index->data)
+                ft_error("Double in list");
+            index = index->next;
+        }
+        check = check->next;
     }
 }
 
-void    parsing(t_data *data, char **av)
+void	args_to_pile_a(t_data *data, char **av)
 {
-    args_to_pile_a(data, av);
-    // check_for_doubles(data);
+	int			i;
+	int			nb;
+	t_pile_a	*new;
+
+	i = 1;
+	while (av[i])
+	{
+		nb = ft_atoi_int(av[i]);
+		new = new_node_a(nb, i - 1);
+		new->next = data->pile_a;
+		data->pile_a = new;
+		data->size_pile_a++;
+		i++;
+	}
+}
+
+void	parsing(t_data *data, char **av)
+{
+	args_to_pile_a(data, av);
+	check_for_doubles(data);
 }

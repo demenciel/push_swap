@@ -6,7 +6,7 @@
 #    By: acouture <acouture@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 11:25:27 by acouture          #+#    #+#              #
-#    Updated: 2023/03/13 13:05:02 by acouture         ###   ########.fr        #
+#    Updated: 2023/03/15 08:05:59 by acouture         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@ CFLAGS	:= -g -Wextra -Wall -Werror
 
 HEADERS	:= -I ./include
 SRCS	:= ./src/main.c \
-			./src/utils.c \
-			./src/parsing.c \
+			./src/parsing/parsing_utils.c \
+			./src/parsing/parsing.c \
 			./src/sorting.c \
 			./src/commands/commands1.c \
 			./src/commands/commands2.c \

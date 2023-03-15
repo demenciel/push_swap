@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:30:43 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/15 07:40:43 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/15 08:02:13 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,12 @@ void				parsing(t_data *data, char **av);
 void				args_to_pile_a(t_data *data, char **av);
 void				copy_a_to_b(t_data *data, int len);
 
+// PARSING UTILS --------------------------------------------------------------
+int					ft_atoi_int(char *s);
+void				check_word(char *s);
+void				check_fit(char *s);
+
 // UTILS --------------------------------------------------------------
-int					ft_atoi_int(char *str);
 void				ft_swap(int *a, int *b);
 void				struct_init(t_data *data);
 t_pile_a			*new_node_a(int data, int index);
