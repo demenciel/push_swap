@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:30:43 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/15 14:27:15 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/15 15:20:28 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,7 @@ void				swap_swap(t_data *data);
 void				push_a(t_data *data);
 void				push_b(t_data *data);
 void				rotate_a(t_data *data);
+void				rotate_b(t_data *data);
+
 
 #endif
