@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:41:45 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/15 10:09:17 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/15 14:19:24 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ t_pile_b	*new_node_b(int data)
 
 	new = (t_pile_b *)malloc(sizeof(t_pile_b));
 	new->data = data;
+	new->index = 0;
 	new->next = NULL;
 	return (new);
 }
