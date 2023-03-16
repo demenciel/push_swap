@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:30:43 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/16 15:54:51 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/16 16:21:36 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void				ft_swap(int *a, int *b);
 void				struct_init(t_data *data);
 t_pile				*new_node(int data);
 void				lst_add_b(t_pile **lst, t_pile *new);
+t_pile				*lst_last_node(t_pile **lst);
 void				copy_a_to_b(t_data *data);
 
 // COMMANDS --------------------------------------------------------------

@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 09:49:10 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/16 14:29:06 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/16 16:28:52 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,14 @@ void    lst_sorted(t_pile **lst)
         check = check->next;
         flag = 0;
     }
-    // if (flag > 0)
-    //     return ;
-    // else
-    // {
-    //     exit(0);
-    //     ft_printf("%sList is sorted", GREEN);
-    // }
+}
+
+t_pile  *lst_last_node(t_pile **lst)
+{
+    t_pile *node;
+
+    node = *lst;
+    while (node->next != NULL)
+        node = node->next;
+    return (node);
 }
