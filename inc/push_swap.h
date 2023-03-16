@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:30:43 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/16 14:27:25 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/16 15:54:51 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ typedef struct s_push_swap
 }					t_data;
 
 // SORTING --------------------------------------------------------------
-void				sorting_under_3(t_data *data);
+void				sorting_3(t_data *data);
 void				sorting(t_data *data);
 void				lst_sorted(t_pile **lst);
 
@@ -69,5 +69,7 @@ void				first_to_last_a(t_data *data);
 void				first_to_last_b(t_data *data);
 void				last_to_first_a(t_data *data);
 void				last_to_first_b(t_data *data);
+void				push_b(t_data *data);
+void				push_a(t_data *data);
 
 #endif

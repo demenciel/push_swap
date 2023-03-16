@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 11:19:26 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/16 13:20:40 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/16 16:05:06 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,51 +42,36 @@ void	swap_b(t_data *data)
 	ft_printf("sb\n");
 }
 
-// void    swap_swap(t_data *data)
-// {
-//     int temp;
+void	push_b(t_data *data)
+{
+    t_pile *node;
+    t_pile *new_head_a;
+    t_pile *new_node_b;
 
-//     if (!data->pile_b->data)
-//         return ;
-//     else
-//     {
-//         temp = data->pile_b->data;
-//         data->pile_b->data = data->pile_b->next->data;
-//         data->pile_b->next->data = temp;
-//     }
+    if ((*data->pile_a) == NULL)
+        return ;
+    if ((*data->pile_a)->next == NULL)
+        return ;
+    node = *data->pile_a;    
+    new_head_a = node->next;
+    new_node_b = new_node(node->data);
+    new_node_b->next = *data->pile_b;
+    *data->pile_b = new_node_b;
+    *data->pile_a = new_head_a;
+}
 
-//     if (!data->pile_a->data)
-//         return ;
-//     else
-//     {
-//         temp = data->pile_a->data;
-//         data->pile_a->data = data->pile_a->next->data;
-//         data->pile_a->next->data = temp;
-//     }
-// 	ft_printf("ss\n");
-// }
+void	push_a(t_data *data)
+{
+    t_pile *node;
+    t_pile *new_head_b;
+    t_pile *new_node_a;
 
-// void	push_b(t_data *data)
-// {
-//     (void)data;
-// }
-
-// void	push_a(t_data *data)
-// {
-//     t_pile_b *pb;
-//     t_pile_a *new;
-
-//     if (!data->pile_b)
-//         return ;
-//     else
-//     {
-//         pb = data->pile_b;
-//         data->pile_b = data->pile_b->next;
-//         data->size_pile_b--;
-//         new = new_node_a(pb->data, 0);
-//         new->next = data->pile_a;
-//         data->size_pile_a++;
-//         data->pile_a = new;
-//         ft_printf("pa");
-//     }
-// }
+    if ((*data->pile_b) == NULL)
+        return ;
+    node = *data->pile_b;    
+    new_head_b = node->next;
+    new_node_a = new_node(node->data);
+    new_node_a->next = *data->pile_a;
+    *data->pile_a = new_node_a;
+    *data->pile_b = new_head_b;
+}
