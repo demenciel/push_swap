@@ -6,7 +6,7 @@
 #    By: acouture <acouture@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 11:25:27 by acouture          #+#    #+#              #
-#    Updated: 2023/03/15 09:06:23 by acouture         ###   ########.fr        #
+#    Updated: 2023/03/16 09:49:35 by acouture         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRCS	:= ./src/main.c \
 			./src/parsing/parsing_utils.c \
 			./src/parsing/parsing.c \
 			./src/sorting.c \
+			./src/lst_utils.c \
 			./src/commands/commands1.c \
 			./src/commands/commands2.c \
 			./utils.c

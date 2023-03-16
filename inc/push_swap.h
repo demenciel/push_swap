@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:30:43 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/15 15:20:28 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/16 14:27:25 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,27 +22,21 @@
 
 # define INT_MAX 2147483647
 # define INT_MIN (-2147483647 - 1)
+# define GREEN "\033[0;92m"
 
 // STRUCTURES --------------------------------------------------------------
 
-typedef struct s_pile_a
+typedef struct s_pile
 {
 	int				data;
 	int				index;
-	struct s_pile_a	*next;
-}					t_pile_a;
-
-typedef struct s_pile_b
-{
-	int				data;
-	int				index;
-	struct s_pile_b	*next;
-}					t_pile_b;
+	struct s_pile	*next;
+}					t_pile;
 
 typedef struct s_push_swap
 {
-	t_pile_a		*pile_a;
-	t_pile_b		*pile_b;
+	t_pile			**pile_a;
+	t_pile			**pile_b;
 	int				size_pile_a;
 	int				size_pile_b;
 }					t_data;
@@ -50,6 +44,7 @@ typedef struct s_push_swap
 // SORTING --------------------------------------------------------------
 void				sorting_under_3(t_data *data);
 void				sorting(t_data *data);
+void				lst_sorted(t_pile **lst);
 
 // PARSING --------------------------------------------------------------
 void				parsing(t_data *data, char **av);
@@ -63,18 +58,16 @@ void				check_fit(char *s);
 // UTILS --------------------------------------------------------------
 void				ft_swap(int *a, int *b);
 void				struct_init(t_data *data);
-t_pile_a			*new_node_a(int data, int index);
-t_pile_b			*new_node_b(int data);
+t_pile				*new_node(int data);
+void				lst_add_b(t_pile **lst, t_pile *new);
 void				copy_a_to_b(t_data *data);
 
 // COMMANDS --------------------------------------------------------------
 void				swap_a(t_data *data);
 void				swap_b(t_data *data);
-void				swap_swap(t_data *data);
-void				push_a(t_data *data);
-void				push_b(t_data *data);
-void				rotate_a(t_data *data);
-void				rotate_b(t_data *data);
-
+void				first_to_last_a(t_data *data);
+void				first_to_last_b(t_data *data);
+void				last_to_first_a(t_data *data);
+void				last_to_first_b(t_data *data);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:41:45 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/15 09:18:08 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/16 14:05:02 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void    check_for_doubles(t_data *data)
 {
-    t_pile_a *index;
-    t_pile_a *check;
+    t_pile *index;
+    t_pile *check;
 
-    check = data->pile_a;
+    check = *data->pile_a;
     while (check != NULL)
     {
         index = check->next;
@@ -35,15 +35,14 @@ void	args_to_pile_a(t_data *data, char **av)
 {
 	int			i;
 	int			nb;
-	t_pile_a	*new;
+	t_pile		*new;
 
 	i = 1;
 	while (av[i])
 	{
 		nb = ft_atoi_int(av[i]);
-		new = new_node_a(nb, i - 1);
-		new->next = data->pile_a;
-		data->pile_a = new;
+		new = new_node(nb);
+		lst_add_b(data->pile_a, new);
 		data->size_pile_a++;
 		i++;
 	}

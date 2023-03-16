@@ -6,33 +6,11 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:41:45 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/15 14:19:24 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/16 09:48:54 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
-
-t_pile_a	*new_node_a(int data, int index)
-{
-	t_pile_a	*new;
-
-	new = (t_pile_a *)malloc(sizeof(t_pile_a));
-	new->data = data;
-	new->index = index;
-	new->next = NULL;
-	return (new);
-}
-
-t_pile_b	*new_node_b(int data)
-{
-	t_pile_b	*new;
-
-	new = (t_pile_b *)malloc(sizeof(t_pile_b));
-	new->data = data;
-	new->index = 0;
-	new->next = NULL;
-	return (new);
-}
 
 void	check_word(char *s)
 {
