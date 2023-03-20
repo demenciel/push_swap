@@ -6,18 +6,19 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 09:49:10 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/16 16:28:52 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/19 07:57:10 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-t_pile	*new_node(int data)
+t_pile	*new_node(int data, int index)
 {
 	t_pile	*new;
 
 	new = (t_pile *)malloc(sizeof(t_pile));
 	new->data = data;
+    new->index = index;
 	new->next = NULL;
 	return (new);
 }
@@ -61,4 +62,19 @@ t_pile  *lst_last_node(t_pile **lst)
     while (node->next != NULL)
         node = node->next;
     return (node);
+}
+
+int lst_len(t_pile **lst)
+{
+    t_pile *node;
+    int len;
+
+    len = 0;
+    node = *lst;
+    while (node != NULL)
+    {
+        len++;
+        node = node->next;
+    }
+    return (len);
 }
