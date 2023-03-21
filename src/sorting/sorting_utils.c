@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 10:10:53 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/20 08:09:29 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/21 14:38:17 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	find_max(t_pile **lst)
 	return (max_index);
 }
 
-int	find_min(t_pile **lst)
+int	find_min(t_pile **lst, int index)
 {
 	t_pile	*node;
 	t_pile	*check;
@@ -53,7 +53,7 @@ int	find_min(t_pile **lst)
 		ft_error("Min error");
 	min_index = node->index;
 	min_data = node->data;
-	while (node != NULL)
+	while (node->index < index)
 	{
 		check = node->next;
 		while (check != NULL)
@@ -67,10 +67,10 @@ int	find_min(t_pile **lst)
 		}
 		node = node->next;
 	}
-	return (min_index);
+	return (min_data);
 }
 
-void	data_on_top(t_pile **lst, char pile, int index)
+void	data_on_top(t_pile **lst, char pile, int data)
 {
 	t_pile *node;
 	t_pile *node_index;
@@ -80,11 +80,11 @@ void	data_on_top(t_pile **lst, char pile, int index)
 	node = *lst;
 	node_index = NULL;
 	steps_to_max = 0;
-	if (index == node->index)
+	if (data == node->data)
 		return ;
 	while (node != NULL)
 	{
-		if (node->index == index)
+		if (node->data == data)
 		{
 			node_index = node;
 			break ;

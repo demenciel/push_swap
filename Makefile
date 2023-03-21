@@ -6,7 +6,7 @@
 #    By: acouture <acouture@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 11:25:27 by acouture          #+#    #+#              #
-#    Updated: 2023/03/20 07:50:43 by acouture         ###   ########.fr        #
+#    Updated: 2023/03/21 14:07:42 by acouture         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ HEADERS	:= -I ./include
 SRCS	:= ./src/main.c \
 			./src/parsing/parsing_utils.c \
 			./src/parsing/parsing.c \
+			./src/sorting/sorting_medium.c \
 			./src/sorting/sorting_small.c \
 			./src/sorting/sorting_utils.c \
 			./src/lst_utils.c \
