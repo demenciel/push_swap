@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 10:10:53 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/22 14:09:31 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/22 15:06:29 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,31 +41,27 @@ int	find_max(t_pile **lst)
 	return (max_index);
 }
 
-int	find_min(t_pile **lst, int index)
+int	find_min(t_pile **lst, int len)
 {
 	t_pile	*node;
 	t_pile	*check;
-	int		min_index;
 	int		min_data;
 
 	node = *lst;
 	if (node->next == NULL)
 		ft_error("Min error");
-	min_index = node->index;
 	min_data = node->data;
-	while (node->index < index)
+	while (len)
 	{
 		check = node->next;
 		while (check != NULL)
 		{
 			if (min_data > check->data)
-			{
-				min_index = check->index;
 				min_data = check->data;
-			}
 			check = check->next;
 		}
 		node = node->next;
+		len--;
 	}
 	return (min_data);
 }
@@ -126,3 +122,32 @@ void	print_pile(t_data *data)
 		pb = pb->next;
 	}
 }
+
+// int	find_min(t_pile **lst, int index)
+// {
+// 	t_pile	*node;
+// 	t_pile	*check;
+// 	int		min_index;
+// 	int		min_data;
+
+// 	node = *lst;
+// 	if (node->next == NULL)
+// 		ft_error("Min error");
+// 	min_index = node->index;
+// 	min_data = node->data;
+// 	while (node->index < index)
+// 	{
+// 		check = node->next;
+// 		while (check != NULL)
+// 		{
+// 			if (min_data > check->data)
+// 			{
+// 				min_index = check->index;
+// 				min_data = check->data;
+// 			}
+// 			check = check->next;
+// 		}
+// 		node = node->next;
+// 	}
+// 	return (min_data);
+// }
