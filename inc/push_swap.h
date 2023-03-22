@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:30:43 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/22 15:04:40 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/22 15:32:42 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ t_pile				*new_node(int data, int index);
 void				lst_add_b(t_pile **lst, t_pile *new);
 t_pile				*lst_last_node(t_pile **lst);
 void				copy_a_to_b(t_data *data);
-int					find_max(t_pile **lst);
+int					find_max(t_pile **lst, int len);
 int					lst_len(t_pile **lst);
 int					find_min(t_pile **lst, int len);
 void				data_on_top(t_pile **lst, char pile, int index);

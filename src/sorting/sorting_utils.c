@@ -6,39 +6,35 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 10:10:53 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/22 15:06:29 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/22 15:33:02 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-int	find_max(t_pile **lst)
+int	find_max(t_pile **lst, int len)
 {
 	t_pile	*node;
 	t_pile	*check;
-	int		max_index;
 	int		max_data;
 
 	node = *lst;
 	if (node->next == NULL)
-		ft_error("Max error");
-	max_index = node->index;
+		ft_error("Min error");
 	max_data = node->data;
-	while (node != NULL)
+	while (len)
 	{
 		check = node->next;
 		while (check != NULL)
 		{
 			if (max_data < check->data)
-			{
-				max_index = check->index;
 				max_data = check->data;
-			}
 			check = check->next;
 		}
 		node = node->next;
+		len--;
 	}
-	return (max_index);
+	return (max_data);
 }
 
 int	find_min(t_pile **lst, int len)
