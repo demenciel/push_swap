@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 07:31:39 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/21 14:36:25 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/22 14:10:39 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	sorting_5(t_data *data)
 	min = find_min(lst, 4);
 	data_on_top(lst, 'a', min);
 	push_b(data);
-	new_min = find_min(lst, 3);
+	new_min = find_min(lst, 4);
 	data_on_top(lst, 'a', new_min);
 	push_b(data);
 	sorting_3(data);
@@ -79,7 +79,7 @@ void	sorting(t_data *data)
 	else if (data->size_pile_a <= 100)
 		sorting_100(data);
 	 
-	print_pile(data);
+	// print_pile(data);
 }
 
 // 3 numbers -> 2 or 3 moves

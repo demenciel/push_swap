@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 10:10:53 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/21 14:38:17 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/22 14:09:31 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,12 +96,13 @@ void	data_on_top(t_pile **lst, char pile, int data)
 		steps_needed = lst_len(lst) - steps_to_max;
 	else
 		steps_needed = steps_to_max;
-	while (steps_needed--)
+	while (steps_needed)
 	{
-		if (node_index->index >= (lst_len(lst) / 2))
+		if (node_index->index > (lst_len(lst) / 2))
 			last_to_first(lst, pile, true);
 		else
 			first_to_last(lst, pile, true);
+		steps_needed--;
 	}
 }
 
