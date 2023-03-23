@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 13:02:56 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/20 07:25:34 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/23 07:52:15 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ void    first_to_last(t_pile **lst, char pile, bool print)
     t_pile *second_node;
     t_pile *first_node;
     
+    if (*lst == NULL || (*lst)->next == NULL)
+        ft_error("empty list, can't make move");
     first_node = *lst;
     second_node = first_node->next;
-    last_node = second_node->next;
+    last_node = *lst;
     while (last_node->next != NULL)
         last_node = last_node->next;
     last_node->next = first_node;
@@ -36,6 +38,8 @@ void    last_to_first(t_pile **lst, char pile, bool print)
     t_pile *second_to_last_node;
     t_pile *last_node;
 
+    if (*lst == NULL || (*lst)->next == NULL)
+        ft_error("empty list, can't make move");
     first_node = *lst;
     second_to_last_node = first_node;
     last_node = first_node->next;
