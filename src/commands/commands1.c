@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 11:19:26 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/23 08:03:11 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/23 09:33:36 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,8 @@ void	push_b(t_data *data)
     t_pile *node;
     t_pile *new_head_a;
     t_pile *new_node_b;
-
-    if ((*data->pile_a) == NULL)
-        return ;
-    if ((*data->pile_a)->next == NULL)
-        return ;
-    node = *data->pile_a;    
+    
+    node = *data->pile_a;
     new_head_a = node->next;
     new_node_b = new_node(node->data, node->index);
     new_node_b->next = *data->pile_b;
@@ -54,6 +50,7 @@ void	push_b(t_data *data)
     *data->pile_a = new_head_a;
     data->size_pile_a--;
     data->size_pile_b++;
+
     ft_printf("pb\n");
 }
 
