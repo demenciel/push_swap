@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lst_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
+/*   By: acouture <acouture@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 09:49:10 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/19 07:57:10 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/25 08:51:13 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ t_pile	*new_node(int data, int index)
 	new = (t_pile *)malloc(sizeof(t_pile));
 	new->data = data;
     new->index = index;
+    new->checked = false;
 	new->next = NULL;
 	return (new);
 }
@@ -38,20 +39,18 @@ void    lst_add_b(t_pile **lst, t_pile *new)
     node->next = new;
 }
 
-void    lst_sorted(t_pile **lst)
+bool lst_sorted(t_pile **lst)
 {
     t_pile *node;
-    t_pile *check;
-    int flag;
-
+    
     node = *lst;
-    check = node->next;
-    flag = 1;
-    while (node->data < check->data && check->next != NULL)
+    while (node != NULL && node->next != NULL)
     {
-        check = check->next;
-        flag = 0;
+        if (node->data > node->next->data)
+            return false;
+        node = node->next;
     }
+    return true;
 }
 
 t_pile  *lst_last_node(t_pile **lst)
