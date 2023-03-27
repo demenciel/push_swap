@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acouture <acouture@student.42quebec.com    +#+  +:+       +#+        */
+/*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 10:10:53 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/25 08:33:34 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/27 14:11:13 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,42 +91,6 @@ void	data_on_top(t_pile **lst, char pile, int data)
 	while (steps_needed)
 	{
 		if (node_index->index > (lst_len(lst) / 2))
-			last_to_first(lst, pile, true);
-		else
-			first_to_last(lst, pile, true);
-		steps_needed--;
-	}
-}
-
-void	data_at_bottom(t_pile **lst, char pile, int data)
-{
-	t_pile *node;
-	t_pile *node_index;
-	int steps_to_data;
-	int steps_needed;
-
-	node = *lst;
-	node_index = NULL;
-	steps_to_data = 0;
-	if (data == node->data)
-		return ;
-	while (node != NULL)
-	{
-		if (node->data == data)
-		{
-			node_index = node;
-			break ;
-		}
-		node = node->next;
-		steps_to_data++;
-	}
-	if (node_index->index > (lst_len(lst) / 2))
-		steps_needed = lst_len(lst) - steps_to_data;
-	else
-		steps_needed = steps_to_data;
-	while (steps_needed)
-	{
-		if (node_index->index < (lst_len(lst) / 2))
 			last_to_first(lst, pile, true);
 		else
 			first_to_last(lst, pile, true);

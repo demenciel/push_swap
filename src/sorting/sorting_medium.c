@@ -3,40 +3,46 @@
 /*                                                        :::      ::::::::   */
 /*   sorting_medium.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acouture <acouture@student.42quebec.com    +#+  +:+       +#+        */
+/*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 12:40:07 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/25 09:17:49 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/27 14:10:26 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
+void b_to_a(t_data *data)
+{
+	int max;
+
+	while (data->size_pile_b > 1)
+	{
+		max = find_max(data->pile_b, data->size_pile_b);
+		data_on_top(data->pile_b, 'b', max);
+		push_a(data);
+	}
+	push_a(data);
+}
+
 void sort_a_100(t_data *data)
 {
-	int len_half;
-	int max;
-	int i;
-	t_pile *node;
+	int min;
+	int transfer;
 
-	i = data->size_pile_a - 1;
-	len_half = data->size_pile_a / 2;
-	while (i)
+	transfer = 0;
+	while (data->size_pile_a > 3)
 	{
-		node = *data->pile_a;
-		max = find_max(data->pile_a, data->size_pile_a);
-		while (node != NULL)
-		{
-			if (node->data == max)
-			{
-				node->checked = true;
-				break;
-			}
-			node = node->next;
-		}
-		data_on_top(data->pile_a, 'a', max);
-		first_to_last(data->pile_a, 'a', true);
-		i--;
+		min = find_min(data->pile_a, data->size_pile_a);
+		data_on_top(data->pile_a, 'a', min);
+		push_b(data);
+		transfer++;
+	}
+	sorting_3(data);
+	while (transfer)
+	{
+		push_a(data);
+		transfer--;
 	}
 }
 
@@ -74,4 +80,5 @@ void	sorting_100(t_data *data)
 		len--;
 	}
 	sort_a_100(data);
+	b_to_a(data);
 }

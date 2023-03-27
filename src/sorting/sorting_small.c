@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting_small.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acouture <acouture@student.42quebec.com    +#+  +:+       +#+        */
+/*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 07:31:39 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/25 07:58:32 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/27 14:09:36 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	sorting(t_data *data)
 	else if (data->size_pile_a <= 100)
 		sorting_100(data);
 	 
-	// print_pile(data);
+	print_pile(data);
 }
 
 // 3 numbers -> 2 or 3 moves
