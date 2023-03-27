@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 11:19:26 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/27 14:09:26 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/27 16:31:09 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	push_b(t_data *data)
     
     node = *data->pile_a;
     new_head_a = node->next;
-    new_node_b = new_node(node->data, node->index);
+    new_node_b = new_node(node->data, data->size_pile_a + 1);
     new_node_b->next = *data->pile_b;
     *data->pile_b = new_node_b;
     *data->pile_a = new_head_a;

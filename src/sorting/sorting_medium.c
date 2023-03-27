@@ -6,15 +6,15 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 12:40:07 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/27 14:10:26 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/27 17:03:20 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-void b_to_a(t_data *data)
+void	b_to_a(t_data *data)
 {
-	int max;
+	int	max;
 
 	while (data->size_pile_b > 1)
 	{
@@ -25,20 +25,20 @@ void b_to_a(t_data *data)
 	push_a(data);
 }
 
-void sort_a_100(t_data *data)
+void	sort_a_100(t_data *data)
 {
-	int min;
-	int transfer;
+	int	min;
+	int	transfer;
 
 	transfer = 0;
-	while (data->size_pile_a > 3)
+	while (data->size_pile_a > 5)
 	{
 		min = find_min(data->pile_a, data->size_pile_a);
 		data_on_top(data->pile_a, 'a', min);
 		push_b(data);
 		transfer++;
 	}
-	sorting_3(data);
+	sorting_5(data);
 	while (transfer)
 	{
 		push_a(data);
@@ -48,9 +48,9 @@ void sort_a_100(t_data *data)
 
 int	avg_of_pile(t_pile **lst, int pile_size)
 {
-	int total;
-	int avg;
-	t_pile *node;
+	int		total;
+	int		avg;
+	t_pile	*node;
 
 	total = 0;
 	avg = 0;
