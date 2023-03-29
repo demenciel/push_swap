@@ -6,29 +6,11 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 12:40:07 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/29 08:49:10 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/29 09:18:47 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
-
-int	avg_of_pile(t_pile **lst, int pile_size)
-{
-	int		total;
-	int		avg;
-	t_pile	*node;
-
-	total = 0;
-	avg = 0;
-	node = *lst;
-	while (node != NULL)
-	{
-		total += node->data;
-		node = node->next;
-	}
-	avg = total / pile_size;
-	return (avg);
-}
 
 void	b_to_a(t_data *data)
 {
@@ -47,9 +29,8 @@ void	sort_a_100(t_data *data)
 {
 	int	min;
 	int	transfer;
-		
-	transfer = 0;
 
+	transfer = 0;
 	while (data->size_pile_a > 5)
 	{
 		min = find_min(data->pile_a, data->size_pile_a);
@@ -65,14 +46,14 @@ void	sort_a_100(t_data *data)
 	}
 }
 
-void sort_b_100(t_data *data)
+void	sort_b_100(t_data *data)
 {
-	int avg;
+	int	median;
 
-	avg = avg_of_pile(data->pile_a, data->size_pile_a) / 2;
+	median = median_of_pile(data->pile_a, data->size_pile_a) / 2;
 	if ((*data->pile_b)->next == NULL)
 		return ;
-	if ((*data->pile_b)->data < avg)
+	if ((*data->pile_b)->data < median)
 		first_to_last(data->pile_b, 'b', true);
 	else
 		swap(data->pile_b, 'b', true);
@@ -80,14 +61,14 @@ void sort_b_100(t_data *data)
 
 void	sorting_100(t_data *data)
 {
-	int avg;
-	int len;
+	int	median;
+	int	len;
 
 	len = data->size_start_pile;
-	avg = avg_of_pile(data->pile_a, data->size_pile_a);
+	median = median_of_pile(data->pile_a, data->size_pile_a);
 	while (len)
 	{
-		if ((*data->pile_a)->data >= avg)
+		if ((*data->pile_a)->data >= median)
 			first_to_last(data->pile_a, 'a', true);
 		else
 		{
@@ -100,4 +81,3 @@ void	sorting_100(t_data *data)
 	sort_a_100(data);
 	b_to_a(data);
 }
-

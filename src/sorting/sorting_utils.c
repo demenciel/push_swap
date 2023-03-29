@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 10:10:53 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/29 08:46:01 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/29 09:18:30 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,26 +62,26 @@ int	find_min(t_pile **lst, int len)
 	return (min_data);
 }
 
-void    update_indexes(t_pile **lst)
+void	update_indexes(t_pile **lst)
 {
-    t_pile *node;
-    int     index;
+	t_pile	*node;
+	int		index;
 
-    node = *lst;
-    index = 0;
-    while (node != NULL)
-    {
-        node->index = index++;
-        node = node->next;
-    }
+	node = *lst;
+	index = 0;
+	while (node != NULL)
+	{
+		node->index = index++;
+		node = node->next;
+	}
 }
 
 void	data_on_top(t_pile **lst, char pile, int data)
 {
-	t_pile *node;
-	t_pile *node_index;
-	int steps_to_max;
-	int steps_needed;
+	t_pile	*node;
+	t_pile	*node_index;
+	int		steps_to_max;
+	int		steps_needed;
 
 	node = *lst;
 	node_index = NULL;
@@ -114,9 +114,9 @@ void	data_on_top(t_pile **lst, char pile, int data)
 
 void	pre_sort_b(t_data *data)
 {
-	int len;
-	int avg;
-	
+	int	len;
+	int	avg;
+
 	avg = avg_of_pile(data->pile_a, data->size_pile_a);
 	len = data->size_pile_a;
 	while (len > (len / 2))
@@ -149,32 +149,3 @@ void	print_pile(t_data *data)
 		pb = pb->next;
 	}
 }
-
-// int	find_min(t_pile **lst, int index)
-// {
-// 	t_pile	*node;
-// 	t_pile	*check;
-// 	int		min_index;
-// 	int		min_data;
-
-// 	node = *lst;
-// 	if (node->next == NULL)
-// 		ft_error("Min error");
-// 	min_index = node->index;
-// 	min_data = node->data;
-// 	while (node->index < index)
-// 	{
-// 		check = node->next;
-// 		while (check != NULL)
-// 		{
-// 			if (min_data > check->data)
-// 			{
-// 				min_index = check->index;
-// 				min_data = check->data;
-// 			}
-// 			check = check->next;
-// 		}
-// 		node = node->next;
-// 	}
-// 	return (min_data);
-// }

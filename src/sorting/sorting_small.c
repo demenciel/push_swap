@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 07:31:39 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/29 08:52:24 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/29 09:18:35 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	sorting_5(t_data *data)
 {
-	t_pile **lst;
-	int min;
-	int new_min;
+	t_pile	**lst;
+	int		min;
+	int		new_min;
 
 	lst = data->pile_a;
 	min = find_min(lst, 5);
@@ -32,7 +32,7 @@ void	sorting_5(t_data *data)
 
 void	sorting_4(t_data *data)
 {
-	int min;
+	int	min;
 
 	min = find_min(data->pile_a, 4);
 	data_on_top(data->pile_a, 'a', min);
@@ -79,8 +79,7 @@ void	sorting(t_data *data)
 	else if (data->size_pile_a <= 100)
 		sorting_100(data);
 	else
-		sorting_big(data);
-	 
+		sorting_100(data);
 	// print_pile(data);
 }
 
