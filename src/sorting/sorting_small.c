@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 07:31:39 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/29 09:38:11 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/29 16:03:16 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	sorting(t_data *data)
 	else if (data->size_pile_a <= 100)
 		sorting_100(data);
 	else
-		sorting_100(data);
+		sorting_big(data);
 	// print_pile(data);
 }
 

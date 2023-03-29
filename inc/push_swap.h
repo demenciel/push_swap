@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:30:43 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/29 09:44:21 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/29 16:06:57 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,12 @@ void				sorting_3(t_data *data);
 void				sorting_4(t_data *data);
 void				sorting_5(t_data *data);
 void				sorting_100(t_data *data);
+void				sorting_big(t_data *data);
 void				sorting(t_data *data);
 bool				lst_sorted(t_pile **lst);
 void				pre_sort_b(t_data *data);
 void				sort_a_100(t_data *data);
-void				sort_b_100(t_data *data);
+void				sort_b_half(t_data *data);
 
 // PARSING --------------------------------------------------------------
 void				parsing(t_data *data, char **av);
