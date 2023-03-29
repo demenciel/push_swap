@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 12:40:07 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/29 09:18:47 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/29 09:47:07 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,12 @@ void	sort_a_100(t_data *data)
 		push_b(data);
 		transfer++;
 	}
-	sorting_5(data);
+	if (data->size_pile_a > 4)
+		sorting_5(data);
+	else if (data->size_pile_a == 4)
+		sorting_4(data);
+	else
+		sorting_3(data);
 	while (transfer)
 	{
 		push_a(data);
@@ -48,27 +53,25 @@ void	sort_a_100(t_data *data)
 
 void	sort_b_100(t_data *data)
 {
-	int	median;
+	int avg;
 
-	median = median_of_pile(data->pile_a, data->size_pile_a) / 2;
+	avg = avg_of_pile(data->pile_a, data->size_pile_a) / 2;
 	if ((*data->pile_b)->next == NULL)
 		return ;
-	if ((*data->pile_b)->data < median)
+	if ((*data->pile_b)->data < avg)
 		first_to_last(data->pile_b, 'b', true);
-	else
-		swap(data->pile_b, 'b', true);
 }
 
 void	sorting_100(t_data *data)
 {
-	int	median;
 	int	len;
+	int	avg;
 
+	avg = avg_of_pile(data->pile_a, data->size_pile_a);
 	len = data->size_start_pile;
-	median = median_of_pile(data->pile_a, data->size_pile_a);
 	while (len)
 	{
-		if ((*data->pile_a)->data >= median)
+		if ((*data->pile_a)->data >= avg)
 			first_to_last(data->pile_a, 'a', true);
 		else
 		{
