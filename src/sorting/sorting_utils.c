@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 10:10:53 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/27 17:02:49 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/29 08:46:01 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,20 @@ int	find_min(t_pile **lst, int len)
 	return (min_data);
 }
 
+void    update_indexes(t_pile **lst)
+{
+    t_pile *node;
+    int     index;
+
+    node = *lst;
+    index = 0;
+    while (node != NULL)
+    {
+        node->index = index++;
+        node = node->next;
+    }
+}
+
 void	data_on_top(t_pile **lst, char pile, int data)
 {
 	t_pile *node;
@@ -95,6 +109,23 @@ void	data_on_top(t_pile **lst, char pile, int data)
 		else
 			first_to_last(lst, pile, true);
 		steps_needed--;
+	}
+}
+
+void	pre_sort_b(t_data *data)
+{
+	int len;
+	int avg;
+	
+	avg = avg_of_pile(data->pile_a, data->size_pile_a);
+	len = data->size_pile_a;
+	while (len > (len / 2))
+	{
+		if ((*data->pile_a)->data >= avg)
+			first_to_last(data->pile_a, 'a', true);
+		else
+			push_b(data);
+		len--;
 	}
 }
 

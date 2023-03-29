@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 11:19:26 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/27 16:31:09 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/29 08:39:32 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ void	push_b(t_data *data)
     *data->pile_a = new_head_a;
     data->size_pile_a--;
     data->size_pile_b++;
+    update_indexes(data->pile_b);
+    update_indexes(data->pile_a);
     ft_printf("pb\n");
 }
 
@@ -69,5 +71,7 @@ void	push_a(t_data *data)
     *data->pile_b = new_head_b;
     data->size_pile_a++;
     data->size_pile_b--;
+        update_indexes(data->pile_b);
+    update_indexes(data->pile_a);
     ft_printf("pa\n");
 }

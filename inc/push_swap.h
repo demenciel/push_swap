@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:30:43 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/27 16:31:02 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/29 08:31:44 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,9 @@ void				sorting_5(t_data *data);
 void				sorting_100(t_data *data);
 void				sorting(t_data *data);
 bool				lst_sorted(t_pile **lst);
+void				pre_sort_b(t_data *data);
+void				sort_a_100(t_data *data);
+void				sort_b_100(t_data *data);
 
 // PARSING --------------------------------------------------------------
 void				parsing(t_data *data, char **av);
@@ -64,14 +67,16 @@ void				check_fit(char *s);
 // UTILS --------------------------------------------------------------
 t_pile				*new_node(int data, int index);
 t_pile				*lst_last_node(t_pile **lst);
+void				lst_add_b(t_pile **lst, t_pile *new);
 void				b_to_a(t_data *data);
 void				struct_init(t_data *data);
-void				lst_add_b(t_pile **lst, t_pile *new);
 int					find_max(t_pile **lst, int len);
 int					find_min(t_pile **lst, int len);
 void				data_on_top(t_pile **lst, char pile, int index);
 int					lst_len(t_pile **lst);
 void				print_pile(t_data *data);
+int					avg_of_pile(t_pile **lst, int pile_size);
+void				update_indexes(t_pile **lst);
 
 // COMMANDS --------------------------------------------------------------
 void				swap(t_pile **lst, char pile, bool print);

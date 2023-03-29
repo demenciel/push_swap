@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 12:40:07 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/28 13:06:47 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/29 08:49:10 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,9 @@ void	sort_a_100(t_data *data)
 {
 	int	min;
 	int	transfer;
-
+		
 	transfer = 0;
+
 	while (data->size_pile_a > 5)
 	{
 		min = find_min(data->pile_a, data->size_pile_a);
@@ -71,7 +72,7 @@ void sort_b_100(t_data *data)
 	avg = avg_of_pile(data->pile_a, data->size_pile_a) / 2;
 	if ((*data->pile_b)->next == NULL)
 		return ;
-	if ((*data->pile_b)->data <= avg)
+	if ((*data->pile_b)->data < avg)
 		first_to_last(data->pile_b, 'b', true);
 	else
 		swap(data->pile_b, 'b', true);
@@ -95,6 +96,7 @@ void	sorting_100(t_data *data)
 		}
 		len--;
 	}
+	pre_sort_b(data);
 	sort_a_100(data);
 	b_to_a(data);
 }

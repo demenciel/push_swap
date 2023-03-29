@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 13:02:56 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/23 09:52:24 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/29 08:32:25 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,11 @@ void    first_to_last(t_pile **lst, char pile, bool print)
     last_node->next = first_node;
     first_node->next = NULL;
     *lst = second_node;
+    update_indexes(lst);
     if (print)
         ft_printf("r%c\n", pile);
 }
+
 
 void    last_to_first(t_pile **lst, char pile, bool print)
 {
@@ -51,6 +53,7 @@ void    last_to_first(t_pile **lst, char pile, bool print)
     second_to_last_node->next = NULL;
     last_node->next = first_node;
     *lst = last_node;
+    update_indexes(lst);
     if (print)
         ft_printf("rr%c\n", pile);
 }
