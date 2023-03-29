@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 08:55:24 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/29 08:57:28 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/29 13:37:48 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void    sorting_big(t_data *data)
 {
-    (void)data;
+    
 }
