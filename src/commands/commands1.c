@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 11:19:26 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/30 14:15:56 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/30 14:52:39 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	swap(t_pile **lst, char pile, bool print)
 	first_node->next = second_node->next;
 	second_node->next = first_node;
 	*lst = second_node;
+	// (void)pile;
+	// (void)print;
 	if (print == true)
 		ft_printf("s%c\n", pile);
 }
