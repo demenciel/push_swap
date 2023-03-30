@@ -6,11 +6,32 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:20:12 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/30 16:53:25 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/30 16:59:25 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
+
+void	free_node(t_pile *node)
+{
+	if (node)
+	{
+		free(node->data);
+		free(node);
+	}
+}
+
+void	free_list(t_pile *node)
+{
+	t_pile	*temp;
+
+	while (node)
+	{
+		temp = node;
+		node = node->next;
+		free_node(temp);
+	}
+}
 
 void	free_struct(t_data *data)
 {
@@ -44,6 +65,8 @@ int	main(int ac, char **av)
 		sorting(data);
 	}
 	lst_sorted(data->pile_a);
-    free_struct(data);
+	free_list((*data->pile_a));
+    free_list((*data->pile_b));
+	free_struct(data);
 	return (0);
 }
