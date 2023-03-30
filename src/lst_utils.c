@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lst_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acouture <acouture@student.42quebec.com    +#+  +:+       +#+        */
+/*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 09:49:10 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/25 08:51:13 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/30 16:54:45 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ t_pile	*new_node(int data, int index)
 	new = (t_pile *)malloc(sizeof(t_pile));
 	new->data = data;
     new->index = index;
-    new->checked = false;
 	new->next = NULL;
 	return (new);
 }
