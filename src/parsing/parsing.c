@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:41:45 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/31 13:51:17 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/31 14:54:34 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	args_to_pile_a(t_data *data, char **av)
 		lst_add_b(data->pile_a, new);
 		data->size_pile_a++;
 		i++;
-        index++;
+		index++;
 	}
 	data->size_start_pile = data->size_pile_a;
 }

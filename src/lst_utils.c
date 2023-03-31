@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 09:49:10 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/31 13:51:46 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/31 14:53:43 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,56 +25,56 @@ t_pile	*new_node(int data, int index)
 	return (new);
 }
 
-void    lst_add_b(t_pile **lst, t_pile *new)
+void	lst_add_b(t_pile **lst, t_pile *new)
 {
-    t_pile *node;
+	t_pile	*node;
 
-    node = *lst;
-    if (*lst == NULL)
-    {
-        *lst = new;
-        return ;
-    }
-    while (node->next != NULL)
-        node = node->next;
-    node->next = new;
+	node = *lst;
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	while (node->next != NULL)
+		node = node->next;
+	node->next = new;
 }
 
-bool lst_sorted(t_pile **lst)
+bool	lst_sorted(t_pile **lst)
 {
-    t_pile *node;
-    
-    node = *lst;
-    while (node != NULL && node->next != NULL)
-    {
-        if (node->data > node->next->data)
-            return false;
-        node = node->next;
-    }
-    return true;
+	t_pile	*node;
+
+	node = *lst;
+	while (node != NULL && node->next != NULL)
+	{
+		if (node->data > node->next->data)
+			return (false);
+		node = node->next;
+	}
+	return (true);
 }
 
-t_pile  *lst_last_node(t_pile **lst)
+t_pile	*lst_last_node(t_pile **lst)
 {
-    t_pile *node;
+	t_pile	*node;
 
-    node = *lst;
-    while (node->next != NULL)
-        node = node->next;
-    return (node);
+	node = *lst;
+	while (node->next != NULL)
+		node = node->next;
+	return (node);
 }
 
-int lst_len(t_pile **lst)
+int	lst_len(t_pile **lst)
 {
-    t_pile *node;
-    int len;
+	t_pile	*node;
+	int		len;
 
-    len = 0;
-    node = *lst;
-    while (node != NULL)
-    {
-        len++;
-        node = node->next;
-    }
-    return (len);
+	len = 0;
+	node = *lst;
+	while (node != NULL)
+	{
+		len++;
+		node = node->next;
+	}
+	return (len);
 }

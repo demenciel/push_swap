@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 12:40:07 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/31 13:54:00 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/31 14:52:22 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	sort_a_100(t_data *data)
 
 void	sort_b_half(t_data *data)
 {
-	int avg;
+	int	avg;
 
 	avg = avg_of_pile(data->pile_a, data->size_pile_a) / 2;
 	if ((*data->pile_b)->next == NULL)
@@ -97,7 +97,7 @@ void	sorting_100(t_data *data)
 		}
 		len--;
 	}
-	// pre_sort_b(data);
-	// sort_a_100(data);
-	// b_to_a(data);
+	pre_sort_b(data);
+	sort_a_100(data);
+	b_to_a(data);
 }

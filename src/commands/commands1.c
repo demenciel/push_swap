@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 11:19:26 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/31 13:03:12 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/31 14:51:09 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,6 @@ void	swap(t_pile **lst, char pile, bool print)
 		ft_printf("s%c\n", pile);
 }
 
-void	swap_swap(t_pile **lst_a, t_pile **lst_b)
-{
-	swap(lst_a, 'a', false);
-	swap(lst_b, 'b', false);
-	ft_printf("ss\n");
-}
-
 void	push_b(t_data *data)
 {
 	t_pile	*node;
@@ -49,6 +42,7 @@ void	push_b(t_data *data)
 	*data->pile_a = new_head_a;
 	data->size_pile_a--;
 	data->size_pile_b++;
+	free_node(node);
 	update_indexes(data->pile_b);
 	update_indexes(data->pile_a);
 	ft_printf("pb\n");
@@ -70,6 +64,7 @@ void	push_a(t_data *data)
 	*data->pile_b = new_head_b;
 	data->size_pile_a++;
 	data->size_pile_b--;
+	free_node(node);
 	update_indexes(data->pile_b);
 	update_indexes(data->pile_a);
 	ft_printf("pa\n");

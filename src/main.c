@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:20:12 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/31 13:52:44 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/31 14:54:03 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	free_node(t_pile *node)
 		free(node->data);
 		free(node->index);
 		free(node);
-	}	
+	}
 }
 
 void	free_list(t_pile *node)
@@ -54,7 +54,7 @@ void	struct_init(t_data *data)
 
 int	main(int ac, char **av)
 {
-	t_data *data;
+	t_data	*data;
 
 	data = malloc(sizeof(t_data));
 	if (ac < 2)
