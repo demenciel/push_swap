@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 10:10:53 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/29 16:05:24 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/31 13:02:13 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ int	find_max(t_pile **lst, int len)
 	node = *lst;
 	if (node->next == NULL)
 		ft_error("Min error");
-	max_data = node->data;
+	max_data = *(node->data);
 	while (len)
 	{
 		check = node->next;
 		while (check != NULL)
 		{
-			if (max_data < check->data)
-				max_data = check->data;
+			if (max_data < *(check->data))
+				max_data = *(check->data);
 			check = check->next;
 		}
 		node = node->next;
@@ -46,14 +46,14 @@ int	find_min(t_pile **lst, int len)
 	node = *lst;
 	if (node->next == NULL)
 		ft_error("Min error");
-	min_data = node->data;
+	min_data = *(node->data);
 	while (len)
 	{
 		check = node->next;
 		while (check != NULL)
 		{
-			if (min_data > check->data)
-				min_data = check->data;
+			if (min_data > *(check->data))
+				min_data = *(check->data);
 			check = check->next;
 		}
 		node = node->next;
@@ -71,7 +71,7 @@ void	update_indexes(t_pile **lst)
 	index = 0;
 	while (node != NULL)
 	{
-		node->index = index++;
+		*(node->index) = index++;
 		node = node->next;
 	}
 }
@@ -86,11 +86,11 @@ void	data_on_top(t_pile **lst, char pile, int data)
 	node = *lst;
 	node_index = NULL;
 	steps_to_max = 0;
-	if (data == node->data)
+	if (data == *(node->data))
 		return ;
 	while (node != NULL)
 	{
-		if (node->data == data)
+		if (*(node->data) == data)
 		{
 			node_index = node;
 			break ;
@@ -98,13 +98,13 @@ void	data_on_top(t_pile **lst, char pile, int data)
 		node = node->next;
 		steps_to_max++;
 	}
-	if (node_index->index > (lst_len(lst) / 2))
+	if (*(node_index->index) > (lst_len(lst) / 2))
 		steps_needed = lst_len(lst) - steps_to_max;
 	else
 		steps_needed = steps_to_max;
 	while (steps_needed)
 	{
-		if (node_index->index > (lst_len(lst) / 2))
+		if (*(node_index->index) > (lst_len(lst) / 2))
 			last_to_first(lst, pile, true);
 		else
 			first_to_last(lst, pile, true);

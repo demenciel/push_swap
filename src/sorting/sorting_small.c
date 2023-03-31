@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 07:31:39 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/30 16:11:47 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/31 13:11:23 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,21 +50,21 @@ void	sorting_3(t_data *data)
 	top = *data->pile_a;
 	mid = top->next;
 	bottom = mid->next;
-	if (top->data > mid->data && top->data < bottom->data)
+	if (*(top->data) > *(mid->data) && *(top->data) < *(bottom->data))
 		swap(data->pile_a, 'a', true);
-	if (top->data > mid->data && mid->data > bottom->data)
+	if (*(top->data) > *(mid->data) && *(mid->data) > *(bottom->data))
 	{
 		first_to_last(data->pile_a, 'a', true);
 		swap(data->pile_a, 'a', true);
 	}
-	if (top->data > bottom->data && mid->data < bottom->data)
+	if (*(top->data) > *(bottom->data) && *(mid->data) < *(bottom->data))
 		first_to_last(data->pile_a, 'a', true);
-	if (top->data < bottom->data && mid->data > bottom->data)
+	if (*(top->data) < *(bottom->data) && *(mid->data) > *(bottom->data))
 	{
 		swap(data->pile_a, 'a', true);
 		first_to_last(data->pile_a, 'a', true);
 	}
-	if (top->data < mid->data && top->data > bottom->data)
+	if (*(top->data) < *(mid->data) && *(top->data) > *(bottom->data))
 		last_to_first(data->pile_a, 'a', true);
 }
 

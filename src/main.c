@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:20:12 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/30 16:59:25 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/31 13:04:52 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ void	free_node(t_pile *node)
 	{
 		free(node->data);
 		free(node);
-	}
+	}	
+	
 }
 
 void	free_list(t_pile *node)
@@ -64,9 +65,9 @@ int	main(int ac, char **av)
 		parsing(data, av);
 		sorting(data);
 	}
-	lst_sorted(data->pile_a);
+	// lst_sorted(data->pile_a);
 	free_list((*data->pile_a));
-    free_list((*data->pile_b));
+	free_list((*data->pile_b));
 	free_struct(data);
 	return (0);
 }

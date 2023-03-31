@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 11:19:26 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/30 14:52:39 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/31 13:03:12 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ void	swap(t_pile **lst, char pile, bool print)
 	first_node->next = second_node->next;
 	second_node->next = first_node;
 	*lst = second_node;
-	// (void)pile;
-	// (void)print;
 	if (print == true)
 		ft_printf("s%c\n", pile);
 }
@@ -45,7 +43,7 @@ void	push_b(t_data *data)
 
 	node = *data->pile_a;
 	new_head_a = node->next;
-	new_node_b = new_node(node->data, data->size_pile_a + 1);
+	new_node_b = new_node(*(node->data), data->size_pile_a + 1);
 	new_node_b->next = *data->pile_b;
 	*data->pile_b = new_node_b;
 	*data->pile_a = new_head_a;
@@ -66,7 +64,7 @@ void	push_a(t_data *data)
 		return ;
 	node = *data->pile_b;
 	new_head_b = node->next;
-	new_node_a = new_node(node->data, node->index);
+	new_node_a = new_node(*(node->data), *(node->index));
 	new_node_a->next = *data->pile_a;
 	*data->pile_a = new_node_a;
 	*data->pile_b = new_head_b;

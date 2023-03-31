@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:30:43 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/30 14:15:37 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/31 12:54:30 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@
 
 typedef struct s_pile
 {
-	int				data;
-	int				index;
+	int				*data;
+	int				*index;
 	bool			checked;
 	struct s_pile	*next;
 }					t_pile;

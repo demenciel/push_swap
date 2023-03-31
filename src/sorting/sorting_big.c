@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 08:55:24 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/30 16:34:14 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/31 12:56:45 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void    sorting_big(t_data *data)
         y = 0;
         while ((y <= median))
         {
-            if ((*data->pile_a)->data > median)
+            if (*((*data->pile_a)->data) > median)
                 first_to_last(data->pile_a, 'a', true);
             else
                 push_b(data);

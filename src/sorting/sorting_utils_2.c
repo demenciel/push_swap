@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 09:17:52 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/29 09:38:27 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/31 13:02:27 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	avg_of_pile(t_pile **lst, int pile_size)
 	node = *lst;
 	while (node != NULL)
 	{
-		total += node->data;
+		total += *(node->data);
 		node = node->next;
 	}
 	avg = total / pile_size;
