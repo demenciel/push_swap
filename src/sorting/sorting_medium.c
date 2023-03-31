@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 12:40:07 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/31 13:05:23 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/31 13:54:00 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ void	sorting_100(t_data *data)
 		}
 		len--;
 	}
-	pre_sort_b(data);
-	sort_a_100(data);
-	b_to_a(data);
+	// pre_sort_b(data);
+	// sort_a_100(data);
+	// b_to_a(data);
 }

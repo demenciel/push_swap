@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:30:43 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/31 12:54:30 by acouture         ###   ########.fr       */
+/*   Updated: 2023/03/31 13:29:28 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ typedef struct s_pile
 {
 	int				*data;
 	int				*index;
-	bool			checked;
 	struct s_pile	*next;
 }					t_pile;
 
@@ -78,6 +77,7 @@ int					lst_len(t_pile **lst);
 void				print_pile(t_data *data);
 int					avg_of_pile(t_pile **lst, int pile_size);
 void				update_indexes(t_pile **lst);
+void				free_node(t_pile *node);
 
 // COMMANDS --------------------------------------------------------------
 void				swap(t_pile **lst, char pile, bool print);
