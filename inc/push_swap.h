@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:30:43 by acouture          #+#    #+#             */
-/*   Updated: 2023/04/01 08:43:42 by acouture         ###   ########.fr       */
+/*   Updated: 2023/04/01 09:05:41 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ typedef struct s_push_swap
 }					t_data;
 
 // SORTING --------------------------------------------------------------
+void				sorting_under_3(t_data *data, int a, int b);
 void				sorting_3(t_data *data);
 void				sorting_4(t_data *data);
 void				sorting_5(t_data *data);
@@ -71,6 +72,8 @@ void				b_to_a(t_data *data);
 void				struct_init(t_data *data);
 int					find_max(t_pile **lst, int len);
 int					find_min(t_pile **lst, int len);
+void				move_data(t_pile **lst, char pile, int index,
+						int steps_to_max);
 void				data_on_top(t_pile **lst, char pile, int index);
 void				print_pile(t_data *data);
 int					avg_of_pile(t_pile **lst, int pile_size);

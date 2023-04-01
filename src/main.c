@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:20:12 by acouture          #+#    #+#             */
-/*   Updated: 2023/04/01 08:42:39 by acouture         ###   ########.fr       */
+/*   Updated: 2023/04/01 08:56:01 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,15 +58,12 @@ int	main(int ac, char **av)
 
 	data = malloc(sizeof(t_data));
 	struct_init(data);
-	if (ac < 3)
-	{
-		free_struct(data);
+	if (ac < 2)
 		return (0);
-	}
 	else
 	{
 		parsing(data, av);
-		sorting(data, ac);
+		sorting(data);
 	}
 	free_list(*data->pile_a);
 	free_list(*data->pile_b);
