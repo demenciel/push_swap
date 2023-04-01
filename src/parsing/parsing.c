@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:41:45 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/31 14:54:34 by acouture         ###   ########.fr       */
+/*   Updated: 2023/04/01 08:06:56 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	check_for_doubles(t_data *data)
 		index = check->next;
 		while (index != NULL)
 		{
-			if (check->data == index->data)
-				ft_error("Double in list");
+			if (*(check->data) == *(index->data))
+				ft_error("");
 			index = index->next;
 		}
 		check = check->next;
