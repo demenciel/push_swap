@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:41:45 by acouture          #+#    #+#             */
-/*   Updated: 2023/04/01 08:24:16 by acouture         ###   ########.fr       */
+/*   Updated: 2023/04/01 09:20:45 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	check_word(char *s)
 {
 	while (*s)
 	{
-		if (!(ft_isdigit(*s)))
+		if (!(ft_isdigit(*s) || *s == '-'))
 			ft_error("");
 		s++;
 	}
@@ -63,7 +63,10 @@ int	ft_atoi_int(char *s)
 	while (*s <= 32)
 		s++;
 	if (*s == '-')
+	{
 		sign = -sign;
+		s++;
+	}
 	while (*s >= '0' && *s <= '9')
 	{
 		res = res * 10 + (*s - '0');

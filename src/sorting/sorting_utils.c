@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 10:10:53 by acouture          #+#    #+#             */
-/*   Updated: 2023/04/01 09:06:08 by acouture         ###   ########.fr       */
+/*   Updated: 2023/04/01 09:14:26 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	find_max(t_pile **lst, int len)
 
 	node = *lst;
 	if (node->next == NULL)
-		ft_error("Min error");
+		ft_error("");
 	max_data = *(node->data);
 	while (len)
 	{
@@ -45,7 +45,7 @@ int	find_min(t_pile **lst, int len)
 
 	node = *lst;
 	if (node->next == NULL)
-		ft_error("Min error");
+		ft_error("");
 	min_data = *(node->data);
 	while (len)
 	{
