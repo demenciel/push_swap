@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 09:17:52 by acouture          #+#    #+#             */
-/*   Updated: 2023/04/01 09:06:01 by acouture         ###   ########.fr       */
+/*   Updated: 2023/04/01 10:15:50 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,50 @@ int	avg_of_pile(t_pile **lst, int pile_size)
 	}
 	avg = total / pile_size;
 	return (avg);
+}
+
+void	sort_cpy(int *cpy, int size)
+{
+	int temp;
+	int i;
+	int y;
+
+	i = 0;
+	while (i < size)
+	{
+		y = i + 1;
+		while (y < size)
+		{
+			if (cpy[i] > cpy[y])
+			{
+				temp = cpy[y];
+				cpy[y] = cpy[i];
+				cpy[i] = temp;
+			}
+			y++;
+		}
+		i++;
+	}
+}
+
+int	median(t_pile **lst)
+{
+	t_pile	*node;
+	int		*cpy;
+	int 	median;
+	int 	i;
+
+	i = 0;
+	node = *lst;
+	cpy = malloc(sizeof(int) * lst_len(lst));
+	while (node != NULL)
+	{
+		cpy[i] = *(node->data);
+		i++;
+		node = node->next;
+	}
+	sort_cpy(cpy, i);
+	median = cpy[i / 2];
+	free(cpy);
+	return (median);
 }

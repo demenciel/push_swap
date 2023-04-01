@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:30:43 by acouture          #+#    #+#             */
-/*   Updated: 2023/04/01 09:05:41 by acouture         ###   ########.fr       */
+/*   Updated: 2023/04/01 09:43:36 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ void				move_data(t_pile **lst, char pile, int index,
 void				data_on_top(t_pile **lst, char pile, int index);
 void				print_pile(t_data *data);
 int					avg_of_pile(t_pile **lst, int pile_size);
+int					median(t_pile **lst);
 void				update_indexes(t_pile **lst);
 void				free_node(t_pile *node);
 
