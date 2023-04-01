@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:41:45 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/16 09:48:54 by acouture         ###   ########.fr       */
+/*   Updated: 2023/04/01 08:24:16 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	check_word(char *s)
 	while (*s)
 	{
 		if (!(ft_isdigit(*s)))
-			ft_error("Not a number");
+			ft_error("");
 		s++;
 	}
 }
@@ -38,14 +38,14 @@ void	check_fit(char *s)
 		++count;
 	}
 	if (count > 10)
-		ft_error("Number too big");
+		ft_error("");
 	maybe_big = 10 == count;
 	max_nb = "2147483647";
 	i = -1;
 	while (++i < count)
 	{
 		if (maybe_big && s[i] > max_nb[i])
-			ft_error("Number too big");
+			ft_error("");
 		if (s[i] < max_nb[i])
 			maybe_big = 0;
 	}

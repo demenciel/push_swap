@@ -6,7 +6,7 @@
 #    By: acouture <acouture@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 11:25:27 by acouture          #+#    #+#              #
-#    Updated: 2023/04/01 08:04:03 by acouture         ###   ########.fr        #
+#    Updated: 2023/04/01 08:40:53 by acouture         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,7 @@ debug: $(NAME)
 clean:
 	@$(MAKE) clean -C $(LIBF_DIR)
 	@rm -rf $(OBJ_PATH)
-	@printf "$(RED)Clean: done$(RESET)\n"
+	@printf "$(RED)Push_swap clean: done$(RESET)\n"
 
 fclean: clean
 	@$(MAKE) fclean -C $(LIBF_DIR)

@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 07:31:39 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/31 14:52:35 by acouture         ###   ########.fr       */
+/*   Updated: 2023/04/01 08:45:15 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,14 @@ void	sorting_4(t_data *data)
 	push_a(data);
 }
 
+void	sorting_2(t_data *data, int a, int b)
+{
+	if (a > b)
+		swap(data->pile_a, 'a', true);
+	else
+		exit(0);
+}
+
 void	sorting_3(t_data *data)
 {
 	t_pile	*top;
@@ -49,6 +57,8 @@ void	sorting_3(t_data *data)
 
 	top = *data->pile_a;
 	mid = top->next;
+	if (data->size_pile_a == 2)
+		sorting_2(data, *(top->data), *(mid->data));
 	bottom = mid->next;
 	if (*(top->data) > *(mid->data) && *(top->data) < *(bottom->data))
 		swap(data->pile_a, 'a', true);

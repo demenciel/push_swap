@@ -6,12 +6,13 @@
 #    By: acouture <acouture@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/06 14:08:40 by acouture          #+#    #+#              #
-#    Updated: 2023/04/01 08:16:37 by acouture         ###   ########.fr        #
+#    Updated: 2023/04/01 08:23:12 by acouture         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
+SRC_PATH = ./
 OBJ_PATH = obj/
 
 SRC :=	ft_atoi.c \
@@ -76,6 +77,7 @@ SRC :=	ft_atoi.c \
 		
 GREEN = \033[0;92m
 
+SRCS 	= $(addprefix $(SRC_PATH), $(SRC))
 OBJ		= $(SRC:%.c=%.o)
 OBJS	= $(addprefix $(OBJ_PATH), $(OBJ))
 
@@ -86,7 +88,7 @@ CFLAGS = -Wall -Werror -Wextra
 all: $(NAME)
 	@exec 2>/dev/null
 
-$(OBJ_PATH)%.o: $(SRC)%.c
+$(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) -o $@ -c $<
 

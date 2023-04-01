@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:41:45 by acouture          #+#    #+#             */
-/*   Updated: 2023/04/01 08:06:56 by acouture         ###   ########.fr       */
+/*   Updated: 2023/04/01 08:30:39 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	check_for_doubles(t_data *data)
 	t_pile	*check;
 
 	check = *data->pile_a;
+	if (check->next == NULL)
+		return ;
 	while (check != NULL)
 	{
 		index = check->next;
