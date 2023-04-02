@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 07:31:39 by acouture          #+#    #+#             */
-/*   Updated: 2023/04/01 10:10:23 by acouture         ###   ########.fr       */
+/*   Updated: 2023/04/01 10:17:38 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,4 @@ void	sorting(t_data *data)
 		sorting_100(data);
 	else
 		sorting_big(data);
-	// print_pile(data);
 }
