@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:41:45 by acouture          #+#    #+#             */
-/*   Updated: 2023/04/02 07:57:13 by acouture         ###   ########.fr       */
+/*   Updated: 2023/04/02 08:23:43 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	check_word(char *s)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i])
@@ -30,30 +30,28 @@ void	check_word(char *s)
 void	check_fit(char *s)
 {
 	int		count;
-	int		i;
-	char	*max_nb;
-	int		maybe_big;
+	int		is_negative;
+	char	*min_val;
 
-	i = -1;
 	count = 0;
-	while (s[++i])
+	is_negative = 0;
+	min_val = "-2147483647";
+	if (*s == '-')
 	{
-		if (s[i] == '-')
-			count--;
-		++count;
+		is_negative = 1;
+		s++;
 	}
-	if (count > 10)
-		ft_error("");
-	maybe_big = 10 == count;
-	max_nb = "2147483647";
-	i = -1;
-	while (++i < count)
+	while (*s)
 	{
-		if (maybe_big && s[i] > max_nb[i])
+		if (!(*s >= '0' && *s <= '9'))
 			ft_error("");
-		if (s[i] < max_nb[i])
-			maybe_big = 0;
+		count++;
+		s++;
 	}
+	if (count > 10 || (count == 10 && (ft_strncmp(s - count, "2147483647",
+					count) > 0 || (is_negative && ft_strncmp(s - count, min_val
+						+ 1, count) > 0))))
+		ft_error("");
 }
 
 void	check_error(char c)
