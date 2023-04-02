@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:20:12 by acouture          #+#    #+#             */
-/*   Updated: 2023/04/02 07:15:11 by acouture         ###   ########.fr       */
+/*   Updated: 2023/04/02 07:40:48 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	main(int ac, char **av)
 	if (ac < 2)
 	{
 		free_struct(data);
-		return (0);
+		return (1);
 	}
 	else
 	{
