@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:41:45 by acouture          #+#    #+#             */
-/*   Updated: 2023/04/02 08:05:52 by acouture         ###   ########.fr       */
+/*   Updated: 2023/04/03 14:09:08 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,11 @@ void	args_to_pile_a(t_data *data, char **av)
 void	parsing(t_data *data, char **av)
 {
 	args_to_pile_a(data, av);
+	if (lst_sorted(data->pile_a) == true)
+	{
+		free_list(*data->pile_a);
+		free_struct(data);
+		exit (0);
+	}
 	check_for_doubles(data);
 }

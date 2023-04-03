@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 09:49:10 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/31 14:53:43 by acouture         ###   ########.fr       */
+/*   Updated: 2023/04/03 14:08:56 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,16 @@ void	lst_add_b(t_pile **lst, t_pile *new)
 bool	lst_sorted(t_pile **lst)
 {
 	t_pile	*node;
+	t_pile	*check;
 
 	node = *lst;
-	while (node != NULL && node->next != NULL)
+	check = node->next;
+	while (node != NULL && check->next != NULL)
 	{
-		if (node->data > node->next->data)
+		if (*(node->data) > *(check->data))
 			return (false);
 		node = node->next;
+		check = check->next;
 	}
 	return (true);
 }
