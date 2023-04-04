@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 14:16:44 by acouture          #+#    #+#             */
-/*   Updated: 2023/03/13 14:17:01 by acouture         ###   ########.fr       */
+/*   Updated: 2023/04/04 14:46:29 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_realloc(void *ptr, size_t size)
 {
-	void *new_ptr;
+	void	*new_ptr;
 
 	if (size == 0)
 	{
