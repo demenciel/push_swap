@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:30:43 by acouture          #+#    #+#             */
-/*   Updated: 2023/04/03 13:52:00 by acouture         ###   ########.fr       */
+/*   Updated: 2023/04/04 13:36:56 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct s_push_swap
 {
 	t_pile			**pile_a;
 	t_pile			**pile_b;
+	char			**args;
 	int				size_pile_a;
 	int				size_start_pile;
 	int				size_pile_b;
@@ -57,8 +58,8 @@ void				sort_a_100(t_data *data);
 void				sort_b_half(t_data *data);
 
 // PARSING --------------------------------------------------------------
-void				parsing(t_data *data, char **av);
-void				args_to_pile_a(t_data *data, char **av);
+void				parsing(t_data *data, char **av, int flag);
+void				args_to_pile_a(t_data *data, char **av, int flag);
 int					ft_atoi_int(char *s);
 void				check_word(char *s);
 void				check_fit(char *s);

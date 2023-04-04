@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 09:49:10 by acouture          #+#    #+#             */
-/*   Updated: 2023/04/03 14:08:56 by acouture         ###   ########.fr       */
+/*   Updated: 2023/04/03 15:28:35 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ bool	lst_sorted(t_pile **lst)
 
 	node = *lst;
 	check = node->next;
-	while (node != NULL && check->next != NULL)
+	while (node->next != NULL)
 	{
 		if (*(node->data) > *(check->data))
 			return (false);

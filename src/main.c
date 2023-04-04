@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:20:12 by acouture          #+#    #+#             */
-/*   Updated: 2023/04/03 13:51:51 by acouture         ###   ########.fr       */
+/*   Updated: 2023/04/04 13:36:09 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	struct_init(t_data *data)
 	*data->pile_a = NULL;
 	data->pile_b = (t_pile **)malloc(sizeof(t_pile *));
 	*data->pile_b = NULL;
+	data->args = NULL;
 	data->size_pile_a = 0;
 	data->size_pile_b = 0;
 	data->size_start_pile = 0;
@@ -65,7 +66,13 @@ int	main(int ac, char **av)
 	}
 	else
 	{
-		parsing(data, av);
+		if (ac == 2)
+		{
+			data->args = ft_split(av[1], ' ');
+			parsing(data, data->args, 1);
+		}	
+		else
+			parsing(data, av, 0);
 		sorting(data);
 	}
 	free_list(*data->pile_a);
