@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:41:45 by acouture          #+#    #+#             */
-/*   Updated: 2023/04/07 13:19:33 by acouture         ###   ########.fr       */
+/*   Updated: 2023/04/14 15:30:25 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ void	check_split(t_data *data)
 
 void	ft_error_push(char *s, t_data *data)
 {
+	(void)s;
 	if (data->args != NULL)
 		free_args(data);
 	free_list(*data->pile_a);
 	free_struct(data);
-	(void)s;
 	write(2, "Error\n", 6);
 	exit(1);
 }
