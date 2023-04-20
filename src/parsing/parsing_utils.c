@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:41:45 by acouture          #+#    #+#             */
-/*   Updated: 2023/04/14 15:30:25 by acouture         ###   ########.fr       */
+/*   Updated: 2023/04/20 14:04:35 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,42 +44,21 @@ void	check_word(char *s, t_data *data)
 	}
 }
 
-void	check_fit(char *s, t_data *data)
+void	check_fit(long n, t_data *data)
 {
-	int		count;
-	int		is_negative;
-	char	*min_val;
-
-	count = 0;
-	is_negative = 0;
-	min_val = "-2147483648";
-	if (*s == '-')
-	{
-		is_negative = 1;
-		s++;
-	}
-	while (*s)
-	{
-		if (!(*s >= '0' && *s <= '9'))
-			ft_error_push("", data);
-		count++;
-		s++;
-	}
-	if (count > 10 || (count == 10 && (ft_strncmp(s - count, "2147483647",
-					count) > 0 || (is_negative && ft_strncmp(s - count, min_val
-						+ 1, count) > 0))))
+	if (n > INT_MAX || n < INT_MIN)
 		ft_error_push("", data);
+	(void)data;
 }
 
-int	ft_atoi_int(char *s, t_data *data)
+long	ft_atoi_int(char *s, t_data *data)
 {
-	int	res;
-	int	sign;
+	long	res;
+	int		sign;
 
 	sign = 1;
 	res = 0;
 	check_word(s, data);
-	check_fit(s, data);
 	while (*s <= 32)
 		s++;
 	if (*s == '-')

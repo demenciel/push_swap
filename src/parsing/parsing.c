@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:41:45 by acouture          #+#    #+#             */
-/*   Updated: 2023/04/17 15:29:37 by acouture         ###   ########.fr       */
+/*   Updated: 2023/04/20 14:04:38 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,12 @@ void	check_for_doubles(t_data *data)
 		while (index != NULL)
 		{
 			if (*(check->data) == *(index->data))
-				ft_error_push("", data);
+			{
+				free_list(*data->pile_a);
+				free_struct(data);
+				write(2, "Error\n", 6);
+				exit(1);
+			}
 			index = index->next;
 		}
 		check = check->next;
@@ -49,7 +54,7 @@ void	check_for_doubles(t_data *data)
 void	args_to_pile_a(t_data *data, char **av, int flag)
 {
 	int		i;
-	int		nb;
+	long	nb;
 	int		index;
 	t_pile	*new;
 
@@ -61,6 +66,7 @@ void	args_to_pile_a(t_data *data, char **av, int flag)
 	while (av[i])
 	{
 		nb = ft_atoi_int(av[i], data);
+		check_fit(nb, data);
 		new = new_node(nb, index);
 		lst_add_b(data->pile_a, new);
 		data->size_pile_a++;

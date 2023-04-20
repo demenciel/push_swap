@@ -6,7 +6,7 @@
 /*   By: acouture <acouture@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 14:30:43 by acouture          #+#    #+#             */
-/*   Updated: 2023/04/07 13:19:31 by acouture         ###   ########.fr       */
+/*   Updated: 2023/04/20 13:50:25 by acouture         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
+# include <limits.h>
 # include <stdbool.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -21,8 +22,6 @@
 
 // MACROS ------------------------------------------------------------------
 
-# define INT_MAX 2147483647
-# define INT_MIN -2147483648
 # define GREEN "\033[0;92m"
 
 // STRUCTURES --------------------------------------------------------------
@@ -60,9 +59,9 @@ void				sort_b_half(t_data *data);
 // PARSING --------------------------------------------------------------
 void				parsing(t_data *data, char **av, int flag);
 void				args_to_pile_a(t_data *data, char **av, int flag);
-int					ft_atoi_int(char *s, t_data *data);
+long				ft_atoi_int(char *s, t_data *data);
 void				check_word(char *s, t_data *data);
-void				check_fit(char *s, t_data *data);
+void				check_fit(long nb, t_data *data);
 
 // UTILS --------------------------------------------------------------
 t_pile				*new_node(int data, int index);
