@@ -4,6 +4,7 @@ This is the Push Swap project for the 42 school curriculum. The goal of the proj
 
 ## How to Run
 
+To have a better experience with the program, there is a visualizer of the program in action. The visualizer will build itself with the make command if you have "cmake" installed on your computer.
 To compile the program, run the following command in the root directory of the project:
 
 ### Usage
@@ -14,6 +15,12 @@ To run the program, execute the following command:
 
 ```bash
 ./push_swap nb1 nb2 nb3 ...
+```
+
+To run the visualizer, execute the following command:
+
+```bash
+cd push_swap_visualizer/build | ./bin/visualizer
 ```
 
 ## Commands

@@ -6,7 +6,7 @@
 #    By: acouture <acouture@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 11:25:27 by acouture          #+#    #+#              #
-#    Updated: 2023/04/01 08:40:53 by acouture         ###   ########.fr        #
+#    Updated: 2023/06/24 13:12:34 by acouture         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,15 +36,21 @@ LIBFT_A = 	libft.a
 LIBF_DIR = 	inc/libft/
 LIBFT  = 	$(addprefix $(LIBF_DIR), $(LIBFT_A))
 
+VISUALIZER_DIR := push_swap_visualizer/
+
 GREEN = \033[0;92m
 RED = \033[0;91m
 RESET = \033[0m
 
-all: makelibft $(NAME)
+all: makelibft makevisualizer $(NAME)
 	@exec 2>/dev/null
 
 makelibft:
 	@$(MAKE) -C $(LIBF_DIR)
+
+makevisualizer:
+	cd $(VISUALIZER_DIR) && mkdir -p build && cd build && cmake .. && make
+
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir -p $(dir $@)
